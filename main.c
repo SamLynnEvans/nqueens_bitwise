@@ -29,24 +29,6 @@ void	check_number(char *str)
 	}	
 }
 
-void print_binary(int n)
-{
-	int	z;
-	char str[17];
-
-	z = 15;
-	while (z >= 0)
-	{
-		if ((1 << z) & n)
-			str[15-z] = '1';
-		else
-			str[15-z] = '0';
-		z--;
-	}
-	str[16] = '\0';
-	printf("%s\n", str);
-}
-
 void	recursive_solver(int row, int maj_con, int min_con, int col_con, int n)
 {
 	int queen_position;
@@ -79,7 +61,7 @@ void	solve_queens(int n)
 	major_dconflict = 0;
 	minor_dconflict = 0;
 	recursive_solver(0, column_conflict, major_dconflict, minor_dconflict, n);
-	printf("solutions = %d", g_count);
+	printf("solutions = %d\n", g_count);
 }
 
 int main(void)
